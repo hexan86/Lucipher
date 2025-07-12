@@ -5,14 +5,21 @@ Date: 12/07/2025
 
 Just for fun I've created this poly-alphabetic substitution cipher.
 It isn't particularly 'secure', but it seems that this specific method has never been implemented before.
-I was thinking to modify known methods for a while and the other day, after taking a class on Cryptography and talking about Cipher methods with the professor, I just put together some ideas and created Lucipher.
+I was thinking to modify known methods for a while and the other day, after taking a class on Cryptography 
+and talking about Cipher methods with the professor, I just put together some ideas and created Lucipher.
 This is my first experiment with ciphers and I'm still learning python, so it's likely to have bugs or errors.
 
-The inner mechanism is quite simple, to be honest: it takes the number of characters in the text and uses this value (SIRN, passed to IRN) to shift the characters, like a well known Caesar's cipher.
-The difference is that for every following letter it shifts of another position: the first letter is shifted by the value of IRN, the second letter by IRN+1, the third letter by IRN+2 and so on.
-On top of that, the second word is not following the same scheme, and the first letter is not shifted by IRN or IRN+x where x is the increasing value of the previous word, but is going back to IRN+1. At the same way the third word starts by shifting by IRN+2 and this goes for the full sentence. 
+The inner mechanism is quite simple, to be honest: it takes the number of characters in the text and uses 
+this value (SIRN, passed to IRN) to shift the characters, like a well known Caesar's cipher.
+The difference is that for every following letter it shifts of another position: the first letter is shifted 
+by the value of IRN, the second letter by IRN+1, the third letter by IRN+2 and so on.
+On top of that, the second word is not following the same scheme, and the first letter is not shifted 
+by IRN or IRN+x where x is the increasing value of the previous word, but is going back to IRN+1. 
+At the same way the third word starts by shifting by IRN+2 and this goes for the full sentence. 
 
-When a sentence ends, the IRN is set back to the starting value (stored in SIRN). I was going to implement a function to use the SIRN to increase even more the shifting for every sentence, like Shift=Sirn+Sirn or something similar, but it was giving me some hard time to create the decode function.
+When a sentence ends, the IRN is set back to the starting value (stored in SIRN). I was going to implement 
+a function to use the SIRN to increase even more the shifting for every sentence, like Shift=Sirn+Sirn 
+or something similar, but it was giving me some hard time to create the decode function.
 """
 
 
